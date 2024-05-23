@@ -1,0 +1,41 @@
+<style>
+  body {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<h1>Car Model Matcher</h1>
+<%= form_tag(match_car_models_path, method: :post, data: { turbo: false }) do %>
+    <div>
+      <%= label_tag :model_name, "Enter Car Model Name" %>
+      <%= text_field_tag :model_name %>
+    </div>
+    <div>
+      <%= submit_tag "Match" %>
+    </div>
+  <% end %>
+
